@@ -79,7 +79,8 @@ useEffect(()=>{
     <div className="one">
       <div className="firstimg">
         <img
-          src="https://cdn.pixabay.com/photo/2016/12/21/05/44/reminder-1922255_960_720.png"
+          // src="https://cdn.pixabay.com/photo/2013/07/13/12/34/briefcase-159882_960_720.png"
+          src="https://cdn.pixabay.com/photo/2013/07/12/17/38/journal-152146_960_720.png"
           alt="Sorry error"
           className="oneimg"
         />

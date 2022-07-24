@@ -228,6 +228,10 @@
     .additemsone input{
         margin: 0;
     }
+
+    .one .firstimg {
+        width: 100%;
+    }
    
 }
 
