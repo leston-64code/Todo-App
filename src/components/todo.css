@@ -1,16 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Gantari:wght@100;200;300;400;600&display=swap');
 
 .one{
-    border:2px solid red;
+    /* border:2px solid red; */
     width: 50vw;
     margin: auto;
     text-align: center;
     font-family: 'Gantari', sans-serif;
-    height:1000px
+    /* height:1000px; */
+    color:white
 }
 
 .firstimg{
-    border: 2px solid blue;
+    /* border: 2px solid blue; */
     width: 50%;
     height: 250px;
     margin: auto;
@@ -26,7 +27,7 @@
 .one p{
     font-weight: 600;
     font-size: 45px;
-    border: 1px solid salmon;
+    /* border: 1px solid salmon; */
     margin: 0;
     margin-top: 15px;
     margin-bottom: 15px;
@@ -52,7 +53,7 @@
 }
 
 .addItems{
-    border:2px solid rosybrown;
+    /* border:2px solid rosybrown; */
     /* margin-bottom: 5px; */
     height: 50px;
     /* display: inline-block; */
@@ -63,12 +64,16 @@
 }
 
 .additemsone{
-    border: 2px solid red;
+    /* border: 2px solid red; */
     width: 70%;
    
 }
+
+.additemsone input{
+    margin-left:153px
+}
 .additemstwo{
-    border: 2px solid red;
+    /* border: 2px solid red; */
     width: 30%;
    
 }
@@ -85,7 +90,68 @@
 }
 
 .leston{
-    border: 1px solid white;
+    /* border: 1px solid white; */
     height: 100%;
     width: 20%;
+}
+
+
+.showitems{
+    margin-top:15px;
+    /* border:2px solid white */
+}
+
+
+.showbutton{
+    padding:15px 25px;
+    /* background-color: white; */
+    text-align: center;
+    margin: auto;
+    font-size: large;
+    font-family: 'Gantari', sans-serif;
+    border-radius: 15px;
+    cursor:pointer
+}
+
+.showitemsone{
+    /* border:4px solid yellow; */
+    margin-top:15px;
+  
+    /* align-items: center; */
+    /* height: 50px; */
+}
+
+
+.paraitemone{
+    /* border: 3px solid white; */
+    width:70%;
+    display: flex;
+    /* align-items: center; */
+    margin:auto;
+    background-color: rgb(175, 61, 228);
+    border-radius: 8px;
+}
+.paraitemone p{
+    margin: 0;
+    font-size: 31px;
+    width: 70%;
+    /* text-align: center; */
+}
+
+.logos{
+    width: 30%;
+
+}
+
+.logos i{
+    padding: 2px;
+    padding-right: 15px;
+    cursor:pointer;
+    
+}
+.logos .btnone:hover{
+    color: green;
+}
+.logos .btntwo:hover{
+    color:red;
 }

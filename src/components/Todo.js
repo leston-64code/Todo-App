@@ -24,6 +24,22 @@ function Todo() {
           </div>
         </div>
       </div>
+
+<div className="showitemsone">
+  <div className="paraitemone">
+    <p>Apple </p>
+    <div className="logos">
+    <i class="fa-solid fa-pen-to-square fa-2x  btnone"></i>
+    <i class="fa-solid fa-trash-can fa-2x btntwo" ></i>
+    </div>
+  </div>
+ 
+  
+</div>
+
+      <div className="showitems">
+        <button className="showbutton">Checklist</button>
+      </div>
     </div>
   );
 }
