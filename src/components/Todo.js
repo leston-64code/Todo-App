@@ -87,17 +87,15 @@ useEffect(()=>{
         <p>Add your notes here ✌👇</p>
       </div>
       <div className="addItems">
-        <div className="additemsone">
-          <input type="text" placeholder="Enter your note✍✍" value={inputData} onChange={(e)=>{
+        <div className="additemer">
+          <div className="additemsone"><input type="text" placeholder="Enter your note✍✍" value={inputData} onChange={(e)=>{
             setInputData(e.target.value)
-          }} />
-        </div>
-        <div className="additemstwo">
-          <div className="leston">
-            <i class="fa-solid fa-circle-plus fa-2x" onClick={()=>{
+          }} /></div>
+          <div className="additemstwo"><div className="leston">
+            <i class="fa-solid fa-circle-plus fa-3x" onClick={()=>{
               count===0?addItems():updaterfunc()
             }}></i>
-          </div>
+          </div></div>
         </div>
       </div>
 
@@ -109,12 +107,14 @@ useEffect(()=>{
       <div className="paraitemone">
       <p>{a.name} </p>
       <div className="logos">
-      <i class="fa-solid fa-pen-to-square fa-2x  btnone" onClick={()=>{
+      <div className="loger">
+      <div className="onner"><i class="fa-solid fa-pen-to-square fa-2x  btnone" onClick={()=>{
         editItem(a.id)
-      }}></i>
-      <i class="fa-solid fa-trash-can fa-2x btntwo" onClick={()=>{
+      }}></i></div>
+      <div className="twoer"> <i class="fa-solid fa-trash-can fa-2x btntwo" onClick={()=>{
         deleteItem(a.id)
-      }}></i>
+      }}></i></div>
+      </div>
       </div>
     </div>
    
@@ -127,7 +127,7 @@ useEffect(()=>{
       <div className="showitems">
         <button className="showbutton" onClick={()=>{
           removeAll()
-        }}>Checklist</button>
+        }}>Clear all notes</button>
       </div>
     </div>
   );
