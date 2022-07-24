@@ -17,7 +17,7 @@ function Todo() {
   const [count ,setCount]=useState(0)
   const [abc,setAbc]=useState(0)
   let inputRef=useRef(null)
-
+  
   function addItems(){
     if(!inputData){
       alert("Please add a note")
@@ -27,10 +27,13 @@ function Todo() {
         id:Math.random(),
         name:inputData
       }
+      
       setItems([...items,obj])
+   
+    
     }
     setInputData("")
-  }
+  } 
 
   function deleteItem(eleid){
     const updatedItems=items.filter((value,b)=>{
@@ -94,7 +97,7 @@ useEffect(()=>{
             setInputData(e.target.value)
           }} ref={inputRef} /></div>
           <div className="additemstwo"><div className="leston">
-            <i class="fa-solid fa-circle-plus fa-3x" onClick={()=>{
+            <i className="fa-solid fa-circle-plus fa-3x" onClick={()=>{
               count===0?addItems():updaterfunc()
             }}></i>
           </div></div>
@@ -123,6 +126,7 @@ useEffect(()=>{
     </div>
     )
   })
+  
 }
 
 
