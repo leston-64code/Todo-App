@@ -4,6 +4,8 @@ import "./todo.css";
 function Todo() {
   const [inputData,setInputData]=useState("")
   const [items,setItems]=useState([])
+  const [count ,setCount]=useState(0)
+  const [abc,setAbc]=useState(0)
 
   function addItems(){
     if(!inputData){
@@ -24,11 +26,39 @@ function Todo() {
       return value.id !== eleid
     })
     setItems(updatedItems)
+    console.log(updatedItems)
   }
 
   function removeAll(){
     setItems([])
   }
+
+  function editItem(index){
+    console.log(index)
+    setCount(1)
+      let editor=items.filter((values,b)=>{
+        return index===values.id
+      })
+      console.log(count)
+     console.log(editor)
+      setInputData(editor[0].name)
+     setAbc(editor[0].id)
+     
+      
+  } 
+  function updaterfunc(){
+    console.log(abc)
+    items.forEach((q,w)=>{
+      if(q.id===abc){
+        items[w].name=inputData
+        
+      }
+    })
+    console.log(inputData)
+    setCount(0)
+    setInputData("")
+  }
+ 
   // console.log(items)
   return (
     <div className="one">
@@ -51,7 +81,7 @@ function Todo() {
         <div className="additemstwo">
           <div className="leston">
             <i class="fa-solid fa-circle-plus fa-2x" onClick={()=>{
-              addItems()
+              count===0?addItems():updaterfunc()
             }}></i>
           </div>
         </div>
@@ -65,7 +95,9 @@ function Todo() {
       <div className="paraitemone">
       <p>{a.name} </p>
       <div className="logos">
-      <i class="fa-solid fa-pen-to-square fa-2x  btnone"></i>
+      <i class="fa-solid fa-pen-to-square fa-2x  btnone" onClick={()=>{
+        editItem(a.id)
+      }}></i>
       <i class="fa-solid fa-trash-can fa-2x btntwo" onClick={()=>{
         deleteItem(a.id)
       }}></i>
