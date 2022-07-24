@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "./todo.css";
 
 // getting data form localstorage
@@ -16,6 +16,7 @@ function Todo() {
   const [items,setItems]=useState(getLocaldata())
   const [count ,setCount]=useState(0)
   const [abc,setAbc]=useState(0)
+  let inputRef=useRef(null)
 
   function addItems(){
     if(!inputData){
@@ -53,7 +54,7 @@ function Todo() {
      console.log(editor)
       setInputData(editor[0].name)
      setAbc(editor[0].id)
-     
+     inputRef.current.focus()
       
   } 
   function updaterfunc(){
@@ -90,7 +91,7 @@ useEffect(()=>{
         <div className="additemer">
           <div className="additemsone"><input type="text" placeholder="Enter your note✍✍" value={inputData} onChange={(e)=>{
             setInputData(e.target.value)
-          }} /></div>
+          }} ref={inputRef} /></div>
           <div className="additemstwo"><div className="leston">
             <i class="fa-solid fa-circle-plus fa-3x" onClick={()=>{
               count===0?addItems():updaterfunc()
