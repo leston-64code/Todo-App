@@ -1,9 +1,19 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./todo.css";
+
+// getting data form localstorage
+const getLocaldata=()=>{
+  let localdata=localStorage.getItem("TodoLogs")
+  if(localdata){
+    return JSON.parse(localdata)
+  }else{
+    return []
+  }
+}
 
 function Todo() {
   const [inputData,setInputData]=useState("")
-  const [items,setItems]=useState([])
+  const [items,setItems]=useState(getLocaldata())
   const [count ,setCount]=useState(0)
   const [abc,setAbc]=useState(0)
 
@@ -59,6 +69,10 @@ function Todo() {
     setInputData("")
   }
  
+useEffect(()=>{
+  localStorage.setItem("TodoLogs",JSON.stringify(items))
+})
+
   // console.log(items)
   return (
     <div className="one">
@@ -70,7 +84,7 @@ function Todo() {
         />
       </div>
       <div className="para">
-        <p>Add your list here ✌👇</p>
+        <p>Add your notes here ✌👇</p>
       </div>
       <div className="addItems">
         <div className="additemsone">
