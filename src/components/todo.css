@@ -130,12 +130,14 @@
     margin:auto;
     background-color: rgb(175, 61, 228);
     border-radius: 8px;
+    
 }
 .paraitemone p{
     margin: 0;
     font-size: 31px;
     width: 70%;
     /* text-align: center; */
+    flex-wrap: wrap;
 }
 
 .logos{
