@@ -10,9 +10,24 @@ function Todo() {
       alert("Please add a note")
     }
     else{
-      setItems([...items,inputData])
+      let obj={
+        id:Math.random(),
+        name:inputData
+      }
+      setItems([...items,obj])
     }
     setInputData("")
+  }
+
+  function deleteItem(eleid){
+    const updatedItems=items.filter((value,b)=>{
+      return value.id !== eleid
+    })
+    setItems(updatedItems)
+  }
+
+  function removeAll(){
+    setItems([])
   }
   // console.log(items)
   return (
@@ -46,12 +61,14 @@ function Todo() {
 {
   items.map((a,b)=>{
     return (
-      <div className="showitemsone">
+      <div className="showitemsone" key={b}>
       <div className="paraitemone">
-      <p>{a} </p>
+      <p>{a.name} </p>
       <div className="logos">
       <i class="fa-solid fa-pen-to-square fa-2x  btnone"></i>
-      <i class="fa-solid fa-trash-can fa-2x btntwo" ></i>
+      <i class="fa-solid fa-trash-can fa-2x btntwo" onClick={()=>{
+        deleteItem(a.id)
+      }}></i>
       </div>
     </div>
    
@@ -62,7 +79,9 @@ function Todo() {
 
 
       <div className="showitems">
-        <button className="showbutton">Checklist</button>
+        <button className="showbutton" onClick={()=>{
+          removeAll()
+        }}>Checklist</button>
       </div>
     </div>
   );
